@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RPG+ — Lista przedmiotów</title>
+  <link rel="icon" href="assets/logo.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="brand">
+        <img class="logo" src="assets/logo.png" alt="RPG+ logo" />
+        <div class="titles">
+          <h1>RPG+ — Lista przedmiotów (posortowane levelowo)</h1>
+          <div class="sub">Filtruj po nazwie/ID, klasie, typie i jakości.</div>
+        </div>
+      </div>
+      <div class="toolbar">
+        <input id="q" type="search" placeholder="Szukaj po nazwie / ID…" />
+        <select id="f-klasa">
+          <option value="">Klasa: wszystkie</option>
+          <option>Wojownik</option>
+          <option>Mag</option>
+          <option>Łucznik</option>
+          <option>Zabójca</option>
+        </select>
+        <select id="f-typ">
+          <option value="">Typ: wszystkie</option>
+          <option value="bron">Broń</option>
+          <option value="pancerz">Pancerz</option>
+          <option value="helm">Hełm</option>
+          <option value="tarcza">Tarcza</option>
+        </select>
+        <select id="f-jakosc">
+          <option value="">Jakość: wszystkie</option>
+          <option>Zwykła</option>
+          <option>Niezwykła</option>
+          <option>Rzadka</option>
+          <option>Epicka</option>
+          <option>Legendarna</option>
+        </select>
+      </div>
+      <div class="toc" id="toc"></div>
+      <div class="count" id="count"></div>
+      <div class="actions">
+        <button id="rememberBtn" class="chip" style="display:none">Wskaż items.json i zapamiętaj</button>
+        <span id="status" class="muted" style="margin-left:8px"></span>
+        <button id="uploadBtn" class="chip" style="display:none">Wczytaj items.json z dysku</button>
+        <input id="fileInput" type="file" accept="application/json" hidden />
+      </div>
+    </div>
+  </header>
+  <main class="container">
+    <!-- Sekcje poziomów będą wstrzykiwane przez JS -->
+    <div id="content"></div>
+  </main>
+  <footer class="container">
+    <p class="muted">RPG+ • Wygenerowano automatycznie. Filtrowanie działa lokalnie.</p>
+  </footer>
+  <script defer src="app.js"></script>
+</body>
+</html>
